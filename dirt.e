@@ -1,15 +1,14 @@
 note
-	description: "Summary description for {SAND}."
+	description: "Summary description for {DIRT}."
 	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
 class
-	SAND
+	DIRT
 
 inherit
 	BLOCK
-	SOLID
 
 create
 	make

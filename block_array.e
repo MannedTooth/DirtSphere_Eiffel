@@ -28,9 +28,6 @@ feature
 				l_blocks.extend (l_list)
 			end
 			blocks := l_blocks
-			l_blocks.at (20).at(100) := block_factory.sand_block
-			l_blocks.at (20).at(100).x := 100
-			l_blocks.at (20).at(100).y := 20
 		end
 
 feature
@@ -42,6 +39,11 @@ feature -- Functions
 			blocks.at (a_x).at (a_y) := block_factory.sand_block
 			blocks.at (a_x).at (a_y).set_x(a_x // 10 * 10)
 			blocks.at (a_x).at (a_y).set_y(a_y // 10 * 10)
+		end
+
+	block_at(a_x, a_y : INTEGER):BLOCK
+		do
+			Result := blocks.at (a_x).at (a_y)
 		end
 
 	block_factory:BLOCK_FACTORY

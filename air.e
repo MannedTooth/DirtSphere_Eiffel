@@ -12,6 +12,7 @@ inherit
 	redefine
 		draw
 	end
+	SOLID
 
 create
 	make

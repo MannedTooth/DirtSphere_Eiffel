@@ -24,11 +24,15 @@ feature {NONE} -- Initialization
 			resolution_height := 200
 			resolution_length := 200
 			block_scale := 10
+			current_block := 1;
 			game_library.enable_video
 			has_error := False
 			create l_window_builder
 			l_window_builder.set_dimension (resolution_height, resolution_length)
 			window := l_window_builder.generate_window
+
+			create updater.make
+
 
 			create l_controller.make
 			controller := l_controller
@@ -41,6 +45,10 @@ feature {NONE} -- Initialization
 		end
 
 feature -- Access
+
+	updater:UPDATER
+
+	current_block:INTEGER
 
 	block_scale:INTEGER
 
@@ -84,7 +92,7 @@ feature {NONE} -- Implementation
 	on_iteration(a_timestamp:NATURAL) -- Launched at every game loop iteration
 		do
 			controller.update_mouse_position
-			print("frame ")
+			updater.update (block_array)
 			across block_array.blocks as  la_array loop
 				drawer.draw_drawables (la_array.item)
 			end

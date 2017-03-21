@@ -15,6 +15,7 @@ feature
 		do
 			texture_air := get_target (a_renderer, create {GAME_COLOR}.make_rgb (0, 0, 0))
 			texture_sand := get_target (a_renderer, create {GAME_COLOR}.make_rgb (123, 213, 20))
+			texture_dirt := get_target (a_renderer, create {GAME_COLOR}.make_rgb (56, 35, 1))
 		end
 
 feature
@@ -26,6 +27,11 @@ feature
 	sand_block:SAND
 		do
 			create Result.make(texture_sand)
+		end
+
+	dirt_block:DIRT
+		do
+			create Result.make(texture_dirt)
 		end
 
 feature {NONE} -- Implementation
@@ -48,5 +54,7 @@ feature {NONE} -- Implementation
 	texture_air:GAME_TEXTURE
 
 	texture_sand:GAME_TEXTURE
+
+	texture_dirt:GAME_TEXTURE
 
 end
