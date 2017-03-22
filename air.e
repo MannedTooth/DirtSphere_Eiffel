@@ -9,6 +9,8 @@ class
 
 inherit
 	BLOCK
+	undefine
+		update
 	redefine
 		draw
 	end

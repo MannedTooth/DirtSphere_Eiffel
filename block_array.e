@@ -34,7 +34,7 @@ feature
 	blocks:LIST[LIST[BLOCK]]
 
 feature -- Functions
-	add_block_at(a_x, a_y : INTEGER)
+	create_block_at(a_x, a_y : INTEGER)
 		do
 			blocks.at (a_x).at (a_y) := block_factory.sand_block
 			blocks.at (a_x).at (a_y).set_x(a_x // 10 * 10)
@@ -44,6 +44,29 @@ feature -- Functions
 	block_at(a_x, a_y : INTEGER):BLOCK
 		do
 			Result := blocks.at (a_x).at (a_y)
+		end
+
+	swap_blocks(a_x1, a_y1, a_x2, a_y2 : INTEGER)
+		local
+			l_block1:BLOCK
+			l_block2:BLOCK
+		do
+
+			l_block1 := block_at(a_x1, a_y1)
+			l_block1.set_x (a_x2)
+			l_block1.set_y (a_y2)
+			l_block2 := block_at(a_x2, a_y2)
+			l_block2.set_x (a_x1)
+			l_block2.set_y (a_y1)
+
+			put_block_at(a_x2, a_y2, l_block1)
+			put_block_at(a_x1, a_y1, l_block2)
+
+		end
+
+	put_block_at(a_x, a_y : INTEGER; a_block_to_put : BLOCK)
+		do
+			blocks.at (a_x).at (a_y) := a_block_to_put
 		end
 
 	block_factory:BLOCK_FACTORY

@@ -8,8 +8,8 @@ deferred class
 	SOLID
 
 feature
-	update
+	update(a_block_array : BLOCK_ARRAY)
 		do
-			print("yo")
+			a_block_array.swap_blocks (x, y, x, y-1)
 		end
 end

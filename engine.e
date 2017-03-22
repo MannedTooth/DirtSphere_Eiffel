@@ -86,7 +86,7 @@ feature {NONE} -- Implementation
 	do
 		print("click")
 		sound_manager.play_sound ("sand1.wav")
-		block_array.add_block_at ((controller.mouse_x), (controller.mouse_y))
+		block_array.create_block_at ((controller.mouse_x), (controller.mouse_y))
 	end
 
 	on_iteration(a_timestamp:NATURAL) -- Launched at every game loop iteration

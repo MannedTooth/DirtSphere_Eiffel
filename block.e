@@ -21,6 +21,10 @@ feature
 			texture := a_texture
 		end
 
+	update
+		do
+		end
+
 
 	texture:GAME_TEXTURE
 

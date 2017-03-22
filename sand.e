@@ -9,6 +9,9 @@ class
 
 inherit
 	BLOCK
+	undefine
+		update
+	end
 	SOLID
 
 create
