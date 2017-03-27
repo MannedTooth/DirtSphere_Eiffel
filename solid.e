@@ -8,8 +8,8 @@ deferred class
 	SOLID
 
 feature
-	update(a_block_array : BLOCK_ARRAY)
+	gravity(a_x, a_y : INTEGER; a_block_array : BLOCK_ARRAY)
 		do
-			a_block_array.swap_blocks (x, y, x, y-1)
+			a_block_array.swap_block_with_right(a_x, a_y)
 		end
 end

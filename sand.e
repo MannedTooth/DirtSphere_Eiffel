@@ -9,7 +9,7 @@ class
 
 inherit
 	BLOCK
-	undefine
+	redefine
 		update
 	end
 	SOLID
@@ -17,5 +17,10 @@ inherit
 create
 	make
 
+feature
+	update(a_block_array : BLOCK_ARRAY)
+		do
+			gravity(x, y, a_block_array)
+		end
 
 end

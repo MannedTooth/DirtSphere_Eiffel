@@ -1,6 +1,6 @@
 note
 	description: "Summary description for {ENGINE}."
-	author: ""
+	author: "Olivier Letendre"
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -84,9 +84,8 @@ feature {NONE} -- Implementation
 
 	on_mouse_button_pressed(a_timestamp:NATURAL_32; a_mouse_state:GAME_MOUSE_BUTTON_PRESSED_STATE; a_nb_clicks:NATURAL_8)
 	do
-		print("click")
 		sound_manager.play_sound ("sand1.wav")
-		block_array.create_block_at ((controller.mouse_x), (controller.mouse_y))
+		block_array.create_block_at ((controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1)
 	end
 
 	on_iteration(a_timestamp:NATURAL) -- Launched at every game loop iteration

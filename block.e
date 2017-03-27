@@ -21,7 +21,7 @@ feature
 			texture := a_texture
 		end
 
-	update
+	update(a_block_array : BLOCK_ARRAY)
 		do
 		end
 
