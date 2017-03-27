@@ -54,7 +54,8 @@ feature -- Functions
 			l_block1:BLOCK
 			l_block2:BLOCK
 		do
-
+			print("X1: " + a_x1.out + " Y1: " + a_y1.out + "%N")
+			print("X2: " + a_x2.out + " Y2: " + a_y2.out + "%N")
 			l_block1 := block_at((a_x1 // block_scale) + 1, (a_y1 // block_scale) + 1)
 			l_block1.set_x (a_x2)
 			l_block1.set_y (a_y2)
@@ -62,15 +63,35 @@ feature -- Functions
 			l_block2.set_x (a_x1)
 			l_block2.set_y (a_y1)
 
+			print("X1: " + l_block1.x.out + " Y1: " + l_block1.y.out + "%N")
+			print("X2: " + l_block2.x.out + " Y2: " + l_block2.y.out + "%N")
+
 			put_block_at((a_x2 // block_scale) + 1, (a_y2 // block_scale) + 1, l_block1)
 			put_block_at((a_x1 // block_scale) + 1, (a_y1 // block_scale) + 1, l_block2)
 
 		end
 
-	swap_block_with_right(a_x, a_y : INTEGER)
+	swap_block_with_up(a_x, a_y : INTEGER)
+		do
+			swap_blocks(a_x, a_y, a_x, a_y - 10)
+		end
+
+	swap_block_with_down(a_x, a_y : INTEGER)
 		do
 			swap_blocks(a_x, a_y, a_x, a_y + block_scale)
 		end
+
+	swap_block_with_left(a_x, a_y : INTEGER)
+		do
+			swap_blocks(a_x, a_y, a_x - block_scale, a_y)
+		end
+
+	swap_block_with_right(a_x, a_y : INTEGER)
+		do
+			swap_blocks(a_x, a_y, a_x + block_scale, a_y)
+		end
+
+
 
 	put_block_at(a_x, a_y : INTEGER; a_block_to_put : BLOCK)
 		do
