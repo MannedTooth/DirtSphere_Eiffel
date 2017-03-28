@@ -19,6 +19,7 @@ feature
 	make(a_texture:GAME_TEXTURE)
 		do
 			texture := a_texture
+			was_updated := false
 		end
 
 	update(a_block_array : BLOCK_ARRAY)
@@ -27,5 +28,17 @@ feature
 
 
 	texture:GAME_TEXTURE
+
+	was_updated:BOOLEAN
+
+	get_was_updated:BOOLEAN
+		do
+			Result := was_updated
+		end
+
+	set_was_updated(a_state:BOOLEAN)
+		do
+			was_updated := a_state
+		end
 
 end

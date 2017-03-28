@@ -21,6 +21,7 @@ feature
 	update(a_block_array : BLOCK_ARRAY)
 		do
 			gravity(x, y, a_block_array)
+			set_was_updated(true)
 		end
 
 end

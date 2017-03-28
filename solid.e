@@ -10,6 +10,6 @@ deferred class
 feature
 	gravity(a_x, a_y : INTEGER; a_block_array : BLOCK_ARRAY)
 		do
-			a_block_array.swap_block_with_left(a_x, a_y)
+			a_block_array.swap_block_with_down(a_x, a_y)
 		end
 end

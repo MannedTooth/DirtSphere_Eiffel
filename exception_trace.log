@@ -49,3 +49,16 @@ GAME2_APPLICATION   make @1
 GAME2_APPLICATION   root's creation                                     
 <000000000447A5A8>                         Routine failure.              Exit
 -------------------------------------------------------------------------------
+
+dirtsphere: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation                                     
+<000000000357DDA8>                         Feature call on void target.  Exit
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation                                     
+<000000000357DDA8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
