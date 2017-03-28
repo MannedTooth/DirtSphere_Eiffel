@@ -62,3 +62,185 @@ GAME2_APPLICATION   root's creation
 GAME2_APPLICATION   root's creation                                     
 <000000000357DDA8>                         Routine failure.              Exit
 -------------------------------------------------------------------------------
+
+dirtsphere: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation        Segmentation violation:      
+<0000000002D92938>                         Operating system signal.      Exit
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation                                     
+<0000000002D92938>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+dirtsphere: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation        Segmentation violation:      
+<0000000002CC5938>                         Operating system signal.      Exit
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation                                     
+<0000000002CC5938>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+dirtsphere: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+ARRAYED_LIST        item @3                index_is_valid:              
+<0000000003C0AE88>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+BLOCK_ARRAY         is_valid_position @1                                
+<0000000003C0AE58>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+BLOCK_ARRAY         swap_blocks @1                                      
+<0000000003C0AE58>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+BLOCK_ARRAY         swap_block_with_down @1
+<0000000003C0AE58>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+SAND                gravity @1                                          
+<0000000003C71148>  (From SOLID)           Routine failure.              Fail
+-------------------------------------------------------------------------------
+SAND                update @1                                           
+<0000000003C71148>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+UPDATER             update @4                                           
+<0000000003C08458>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ENGINE              on_iteration @2                                     
+<0000000003C05608>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           fast_call                                           
+<0000000003C22DC8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           call @5                                             
+<0000000003C22DC8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ACTION_SEQUENCE     call @22                                            
+<0000000003C22C48>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_LIBRARY_CONTROLLER
+                    inline-agent#5 of make @1
+<0000000003C05678>  (From GAME_COMMON_EVENTS)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           fast_call                                           
+<0000000003C06C88>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           call @5                                             
+<0000000003C06C88>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ACTION_SEQUENCE     call @22                                            
+<0000000003C05948>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_EVENTS_CONTROLLER
+                    poll_event @4          
+<0000000003C05808>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_LIBRARY_CONTROLLER
+                    update_events @1       
+<0000000003C05678>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_LIBRARY_CONTROLLER
+                    launch @4              
+<0000000003C05678>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ENGINE              run @5                                              
+<0000000003C05608>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+APPLICATION         make @3                                             
+<0000000003C055E8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   make @1                                             
+<0000000003C055A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation                                     
+<0000000003C055A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+dirtsphere: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+ARRAYED_LIST        item @3                index_is_valid:              
+<0000000003CCEE88>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+BLOCK_ARRAY         is_valid_position @1                                
+<0000000003CCEE58>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+BLOCK_ARRAY         swap_blocks @1                                      
+<0000000003CCEE58>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+BLOCK_ARRAY         swap_block_with_down @1
+<0000000003CCEE58>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+SAND                gravity @1                                          
+<0000000003D6A438>  (From SOLID)           Routine failure.              Fail
+-------------------------------------------------------------------------------
+SAND                update @1                                           
+<0000000003D6A438>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+UPDATER             update @4                                           
+<0000000003CCC458>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ENGINE              on_iteration @2                                     
+<0000000003CC9608>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           fast_call                                           
+<0000000003CE6DC8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           call @5                                             
+<0000000003CE6DC8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ACTION_SEQUENCE     call @22                                            
+<0000000003CE6C48>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_LIBRARY_CONTROLLER
+                    inline-agent#5 of make @1
+<0000000003CC9678>  (From GAME_COMMON_EVENTS)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           fast_call                                           
+<0000000003CCAC88>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+PROCEDURE           call @5                                             
+<0000000003CCAC88>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ACTION_SEQUENCE     call @22                                            
+<0000000003CC9948>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_EVENTS_CONTROLLER
+                    poll_event @4          
+<0000000003CC9808>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_LIBRARY_CONTROLLER
+                    update_events @1       
+<0000000003CC9678>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME_LIBRARY_CONTROLLER
+                    launch @4              
+<0000000003CC9678>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ENGINE              run @5                                              
+<0000000003CC9608>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+APPLICATION         make @3                                             
+<0000000003CC95E8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   make @1                                             
+<0000000003CC95A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME2_APPLICATION   root's creation                                     
+<0000000003CC95A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 note
-	description: "Summary description for {AIR}."
-	author: ""
+	description: "Un type de bloc."
+	author: "Olivier Letendre"
 	date: "$Date$"
 	revision: "$Revision$"
 
@@ -16,9 +16,9 @@ inherit
 create
 	make
 
-feature
+feature {NONE} --Fonctions
 
-	draw(a_renderer:GAME_RENDERER)
+	draw(a_renderer:GAME_RENDERER) --Redéfinition de la fonction `draw` pour ne rien afficher
 		do
 		end
 end

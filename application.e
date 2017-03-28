@@ -1,6 +1,6 @@
 note
-    description : "A game created in Eiffel."
-    author      : ""
+    description : "DirtSphere, un jeu développé en Eiffel avec la libraire Eiffel_Game2."
+    author      : "Olivier Letendre"
     generator   : "Eiffel Game2 Project Wizard"
     date        : "2017-02-14 07:27:19.999 +0000"
     revision    : "0.1"
@@ -15,10 +15,9 @@ inherit
 create
     make
 
-feature {NONE} -- Initialization
+feature {NONE} --Création
 
-    make
-            -- Running the game.
+    make --Lancement de l'application
         local
         	l_engine:ENGINE
         do

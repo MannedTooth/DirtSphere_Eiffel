@@ -18,7 +18,7 @@ feature
 		renderer := a_renderer
 		create l_background_color.make_rgb(0,0,0)
 		background_color := l_background_color
-		renderer.set_drawing_color (background_color)
+
 	end
 
 	draw(a_drawable : DRAWABLE)
@@ -28,10 +28,15 @@ feature
 
 	draw_drawables(a_drawables : LIST[DRAWABLE])
 		do
-			renderer.clear
 			across a_drawables as la_drawables loop
 				draw(la_drawables.item)
 			end
+		end
+
+	clear
+		do
+			renderer.set_drawing_color (background_color)
+			renderer.clear
 		end
 
 
