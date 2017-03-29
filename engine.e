@@ -21,9 +21,9 @@ feature {NONE} --Création
 			l_window_builder:GAME_WINDOW_RENDERED_BUILDER
 			l_controller:CONTROLLER
 		do
-			resolution_height := 300
-			resolution_length := 300
-			block_scale := 10
+			resolution_height := 1980
+			resolution_length := 1080
+			block_scale := 20
 			current_block := 1
 			game_library.enable_video
 			has_error := False
@@ -83,14 +83,17 @@ feature -- Access
 feature {NONE} -- Implementation
 
 	on_mouse_button_pressed(a_timestamp:NATURAL_32; a_mouse_state:GAME_MOUSE_BUTTON_PRESSED_STATE; a_nb_clicks:NATURAL_8)
-	do
-		sound_manager.play_sound ("sand1.wav")
-		block_array.create_block_at ((controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1)
-	end
+		do
+
+		end
 
 	on_iteration(a_timestamp:NATURAL) -- Launched at every game loop iteration
 		do
-			controller.update_mouse_position
+			controller.update_mouse
+			if controller.mouse_left_is_held then
+				--sound_manager.play_sound ("sand1.wav")
+				block_array.create_block_at ((controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1)
+			end
 			updater.update (block_array)
 			drawer.clear
 			across block_array.get_blocks as  la_array loop
