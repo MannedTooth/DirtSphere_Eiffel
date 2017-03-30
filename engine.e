@@ -22,9 +22,9 @@ feature --Création
 			l_window_builder:GAME_WINDOW_RENDERED_BUILDER
 			l_controller:CONTROLLER
 		do
-			resolution_height := 600
-			resolution_length := 800
-			block_scale := 20
+			resolution_height := 1280
+			resolution_length := 720
+			block_scale := 10
 			current_block := 1
 			game_library.enable_video
 			has_error := False

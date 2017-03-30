@@ -82,8 +82,7 @@ feature -- Fonctions
 			l_block1:BLOCK
 			l_block2:BLOCK
 		do
-			if (is_valid_position(a_x1, a_y1) and is_valid_position(a_x2, a_y2))
-			then
+			if (is_valid_position(a_x1, a_y1) and is_valid_position(a_x2, a_y2)) then
 				l_block1 := block_at(a_x1, a_y1)
 				l_block1.set_x_screen ((a_x2 - 1) * block_scale)
 				l_block1.set_y_screen ((a_y2 - 1) * block_scale)
@@ -133,6 +132,22 @@ feature -- Fonctions
 			-- `a_y` : Coordonée Y du bloc à échanger
 		do
 			swap_blocks(a_x, a_y, a_x + 1, a_y)
+		end
+
+	swap_block_with_down_left(a_x, a_y : INTEGER)
+			-- Échange les positions du bloc avec le bloc en bas
+			-- `a_x` : Coordonée X du bloc à échanger
+			-- `a_y` : Coordonée Y du bloc à échanger
+		do
+			swap_blocks(a_x, a_y, a_x - 1, a_y + 1)
+		end
+
+	swap_block_with_down_right(a_x, a_y : INTEGER)
+			-- Échange les positions du bloc avec le bloc en bas
+			-- `a_x` : Coordonée X du bloc à échanger
+			-- `a_y` : Coordonée Y du bloc à échanger
+		do
+			swap_blocks(a_x, a_y, a_x + 1, a_y + 1)
 		end
 
 	put_block_at(a_x, a_y : INTEGER; a_block_to_put : BLOCK)

@@ -18,8 +18,9 @@ feature -- Création
 			-- `a_renderer` : le `GAME_RENDERER` qui créera les textures des blocs
 		do
 			texture_air := get_target (a_block_scale, a_renderer, create {GAME_COLOR}.make_rgb (0, 0, 0))
-			texture_sand := get_target (a_block_scale, a_renderer, create {GAME_COLOR}.make_rgb (123, 213, 20))
+			texture_sand := get_target (a_block_scale, a_renderer, create {GAME_COLOR}.make_rgb (237, 213, 118))
 			texture_dirt := get_target (a_block_scale, a_renderer, create {GAME_COLOR}.make_rgb (56, 35, 1))
+			texture_water := get_target (a_block_scale, a_renderer, create {GAME_COLOR}.make_rgb (106, 144, 226))
 		end
 
 feature -- Fonctions
@@ -40,6 +41,12 @@ feature -- Fonctions
 			-- Crée un bloc de `DIRT`
 		do
 			create Result.make(texture_dirt)
+		end
+
+	water_block:WATER
+			--Crée un bloc de `WATER`
+		do
+			create Result.make(texture_water)
 		end
 
 	get_target(a_block_scale : INTEGER; a_renderer:GAME_RENDERER; a_color:GAME_COLOR):GAME_TEXTURE_TARGET
@@ -69,6 +76,6 @@ feature {NONE} -- Attributs
 
 	texture_dirt:GAME_TEXTURE -- texture d'un bloc de `DIRT`
 
-
+	texture_water:GAME_TEXTURE -- texture d'un bloc de `WATER`
 
 end
