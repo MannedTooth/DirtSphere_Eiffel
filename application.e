@@ -15,9 +15,10 @@ inherit
 create
     make
 
-feature {NONE} --Création
+feature {NONE} -- Création
 
-    make --Lancement de l'application
+    make
+    		-- Lancement de l'application
         local
         	l_engine:ENGINE
         do
@@ -26,5 +27,18 @@ feature {NONE} --Création
             	l_engine.run
             end
         end
+
+note
+	copyright: "Copyright (c) 2017, Olivier Letendre"
+	license: "[
+			 This program is free software: you can redistribute it and/or modify
+			 it under the terms of the GNU General Public License as published by
+			 the Free Software Foundation, either version 3 of the License, or
+			 (at your option) any later version.
+			 ]"
+	source: "[
+			Olivier Letendre
+			Email MannedTooth@outlook.com
+			]"
 
 end

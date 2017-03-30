@@ -1,8 +1,8 @@
 note
-	description: "Summary description for {ENGINE}."
+	description: "Moteur principal du jeu."
 	author: "Olivier Letendre"
-	date: "$Date$"
-	revision: "$Revision$"
+	date: "29/03/2016"
+	revision: "0.1"
 
 class
 	ENGINE
@@ -14,15 +14,16 @@ inherit
 create
 	make
 
-feature {NONE} --Création
+feature --Création
 
-	make --Création du moteur de jeu
+	make
+			--Création du moteur de jeu
 		local
 			l_window_builder:GAME_WINDOW_RENDERED_BUILDER
 			l_controller:CONTROLLER
 		do
-			resolution_height := 1980
-			resolution_length := 1080
+			resolution_height := 600
+			resolution_length := 800
 			block_scale := 20
 			current_block := 1
 			game_library.enable_video
@@ -44,50 +45,27 @@ feature {NONE} --Création
 			create drawer.make(window.renderer)
 		end
 
-feature -- Access
+feature -- Fonctions
 
-	updater:UPDATER
-
-	current_block:INTEGER
-
-	block_scale:INTEGER
-
-	resolution_height:INTEGER
-
-	resolution_length:INTEGER
-
-	has_error:BOOLEAN -- If the game encounters an error
-
-	window:GAME_WINDOW_RENDERED -- The window to draw the scene
-
-	controller:CONTROLLER -- Controller that manages inputs
-
-	sound_manager:SOUND_MANAGER
-
-	block_array:BLOCK_ARRAY
-
-	block_factory:BLOCK_FACTORY
-
-	drawer:DRAWER
-
-	run --Execute the game
+	run
+			-- Lance le jeu
 		require
 			No_Error: not has_error
 		do
-			window.mouse_button_pressed_actions.extend (agent on_mouse_button_pressed)
+--			window.mouse_button_pressed_actions.extend (agent on_mouse_button_pressed)
 			game_library.iteration_actions.extend (agent on_iteration)
 			game_library.quit_signal_actions.extend (agent on_quit)
 			game_library.launch
 		end
 
-feature {NONE} -- Implementation
+--	on_mouse_button_pressed(a_timestamp:NATURAL_32; a_mouse_state:GAME_MOUSE_BUTTON_PRESSED_STATE; a_nb_clicks:NATURAL_8)
+--			
+--		do
 
-	on_mouse_button_pressed(a_timestamp:NATURAL_32; a_mouse_state:GAME_MOUSE_BUTTON_PRESSED_STATE; a_nb_clicks:NATURAL_8)
-		do
-
-		end
+--		end
 
 	on_iteration(a_timestamp:NATURAL) -- Launched at every game loop iteration
+			-- Fonction qui se lance à chaque itération du jeu
 		do
 			controller.update_mouse
 			if controller.mouse_left_is_held then
@@ -102,30 +80,38 @@ feature {NONE} -- Implementation
 			window.update
 		end
 
-
-	on_quit(a_timestamp:NATURAL) -- When the user closes the window
+	on_quit(a_timestamp:NATURAL)
+			-- Fonction qui se lance lorsque le joueur ferme la fenêtre
 		do
 			game_library.stop
 		end
 
-	is_block_array_valid:BOOLEAN
-		do
-			Result := True
-			across 1 |..| block_array.get_blocks.count as la_index1 loop
-				across 1 |..| block_array.get_blocks.at (la_index1.item).count as la_index2 loop
-					Result := Result and
-								block_array.get_blocks.at (la_index1.item).at (la_index2.item).x = ((la_index1.item - 1) * 10) and
-								block_array.get_blocks.at (la_index1.item).at (la_index2.item).y = ((la_index2.item - 1) * 10)
-					if not Result then
-						print("Index1: " + ((la_index1.item - 1) * 10).out + "%N")
-						print("Index2: " + ((la_index2.item - 1) * 10).out + "%N")
-						print("X:" + block_array.get_blocks.at (la_index1.item).at (la_index2.item).x.out + "%N")
-						print("Y:" + block_array.get_blocks.at (la_index1.item).at (la_index2.item).y.out + "%N")
-					end
-				end
-			end
-		end
+feature -- Attributs
 
-invariant
-	Block_Position_Valid:--is_block_array_valid
+	updater:UPDATER -- l'objet qui mets à jour les blocs
+
+	current_block:INTEGER -- le bloc utilisé en ce moment [TBA]
+
+	block_scale:INTEGER -- La grosseur d'un bloc
+
+	resolution_height:INTEGER -- La hauteur de la fenêtre
+
+	resolution_length:INTEGER -- La largeur de la fenêtre
+
+	has_error:BOOLEAN -- Si le jeu rencontre un erreur
+
+	window:GAME_WINDOW_RENDERED -- La fenetre du jeu
+
+	controller:CONTROLLER -- Le gestionnaire d'entrées
+
+	sound_manager:SOUND_MANAGER -- Le gestionnaire de sons
+
+	block_array:BLOCK_ARRAY -- La liste de blocs
+
+	block_factory:BLOCK_FACTORY -- Le créateur de blocs
+
+	drawer:DRAWER -- Le dessinateur
+
+
+
 end
