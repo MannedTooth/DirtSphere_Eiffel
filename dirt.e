@@ -8,7 +8,7 @@ class
 	DIRT
 
 inherit
-	BLOCK
+	SOLID
 
 create
 	make
@@ -18,6 +18,7 @@ feature -- Fonctions
 	update(a_block_array:BLOCK_ARRAY)
 			-- <precursor>
 		do
+			gravity(a_block_array)
 		end
 
 note

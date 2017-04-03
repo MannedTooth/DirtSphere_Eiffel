@@ -8,11 +8,11 @@ class
 	WATER
 
 inherit
-	BLOCK
+	LIQUID
 	redefine
 		update
 	end
-	LIQUID
+
 
 create
 	make
@@ -23,6 +23,7 @@ feature -- Fonction
 			-- <precursor>
 		do
 			gravity(a_block_array)
+
 			set_was_updated(true)
 		end
 

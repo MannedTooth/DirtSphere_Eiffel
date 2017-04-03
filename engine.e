@@ -22,9 +22,9 @@ feature --Création
 			l_window_builder:GAME_WINDOW_RENDERED_BUILDER
 			l_controller:CONTROLLER
 		do
-			resolution_height := 1280
-			resolution_length := 720
-			block_scale := 10
+			resolution_height := 600
+			resolution_length := 600
+			block_scale := 20
 			current_block := 1
 			game_library.enable_video
 			has_error := False
@@ -52,26 +52,22 @@ feature -- Fonctions
 		require
 			No_Error: not has_error
 		do
---			window.mouse_button_pressed_actions.extend (agent on_mouse_button_pressed)
+			window.key_pressed_actions.extend (agent on_key_pressed)
+			window.key_released_actions.extend (agent on_key_released)
 			game_library.iteration_actions.extend (agent on_iteration)
 			game_library.quit_signal_actions.extend (agent on_quit)
 			game_library.launch
 		end
 
---	on_mouse_button_pressed(a_timestamp:NATURAL_32; a_mouse_state:GAME_MOUSE_BUTTON_PRESSED_STATE; a_nb_clicks:NATURAL_8)
---			
---		do
-
---		end
-
 	on_iteration(a_timestamp:NATURAL)
-			-- Launched at every game loop iteration
 			-- Fonction qui se lance à chaque itération du jeu
 		do
 			controller.update_mouse
 			if controller.mouse_left_is_held then
 				--sound_manager.play_sound ("sand1.wav")
-				block_array.create_block_at ((controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1)
+				if block_array.is_valid_position((controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1) and attached {AIR} block_array.block_at ((controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1) then
+					block_array.create_block_at (current_block, (controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1)
+				end
 			end
 			updater.update (block_array)
 			drawer.clear
@@ -79,6 +75,28 @@ feature -- Fonctions
 				drawer.draw_drawables (la_array.item)
 			end
 			window.update
+		end
+
+	on_key_pressed(a_timestamp: NATURAL_32; a_key_state: GAME_KEY_STATE)
+		do
+			if not a_key_state.is_repeat then
+				if a_key_state.is_space then
+					current_block := 2
+
+				end
+
+			end
+		end
+
+	on_key_released(a_timestamp: NATURAL_32; a_key_state: GAME_KEY_STATE)
+		do
+			if not a_key_state.is_repeat then
+				if a_key_state.is_space then
+					current_block := 1
+
+				end
+
+			end
 		end
 
 	on_quit(a_timestamp:NATURAL)

@@ -28,25 +28,25 @@ feature -- Fonctions
 	air_block:AIR
 			-- Crée un bloc d' `AIR`
 		do
-			create Result.make(texture_air)
+			create Result.make(texture_air, false)
 		end
 
 	sand_block:SAND
 			-- Crée un bloc de `SAND`
 		do
-			create Result.make(texture_sand)
+			create Result.make(texture_sand, false)
 		end
 
 	dirt_block:DIRT
 			-- Crée un bloc de `DIRT`
 		do
-			create Result.make(texture_dirt)
+			create Result.make(texture_dirt, false)
 		end
 
 	water_block:WATER
 			--Crée un bloc de `WATER`
 		do
-			create Result.make(texture_water)
+			create Result.make(texture_water, false)
 		end
 
 	get_target(a_block_scale : INTEGER; a_renderer:GAME_RENDERER; a_color:GAME_COLOR):GAME_TEXTURE_TARGET

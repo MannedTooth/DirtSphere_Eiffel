@@ -12,10 +12,11 @@ inherit
 
 feature {NONE} -- Création
 
-	make(a_texture:GAME_TEXTURE)
+	make(a_texture:GAME_TEXTURE; a_is_floating: BOOLEAN)
 			-- Création d'un bloc
 		do
 			texture := a_texture
+			is_floating := a_is_floating
 			was_updated := false
 		end
 
@@ -86,5 +87,7 @@ feature {NONE} -- Attributs
 	x_table:INTEGER -- La coordonnée X du bloc dans la liste
 
 	y_table:INTEGER -- La coordonnée Y du bloc dans la liste
+
+	is_floating:BOOLEAN -- Est-ce que le bloc peut flotter sur des liquides?
 
 end

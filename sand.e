@@ -8,11 +8,10 @@ class
 	SAND
 
 inherit
-	BLOCK
+	SOLID
 	redefine
 		update
 	end
-	SOLID
 
 create
 	make
@@ -22,6 +21,12 @@ feature -- Fonction
 	update(a_block_array : BLOCK_ARRAY)
 			-- <precursor>
 		do
+			if a_block_array.is_valid_position (get_x_table, get_y_table + 1) and attached {WATER} (a_block_array.block_at (get_x_table, get_y_table + 1)) then
+				a_block_array.swap_block_with_down (get_x_table, get_y_table)
+			end
+			if a_block_array.is_valid_position (get_x_table, get_y_table - 1) and attached {WATER} (a_block_array.block_at (get_x_table, get_y_table - 1)) then
+				a_block_array.create_block_at (3, get_x_table, get_y_table)
+			end
 			gravity(a_block_array)
 			set_was_updated(true)
 		end
