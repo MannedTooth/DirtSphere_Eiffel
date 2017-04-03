@@ -64,7 +64,8 @@ feature -- Fonctions
 
 --		end
 
-	on_iteration(a_timestamp:NATURAL) -- Launched at every game loop iteration
+	on_iteration(a_timestamp:NATURAL)
+			-- Launched at every game loop iteration
 			-- Fonction qui se lance à chaque itération du jeu
 		do
 			controller.update_mouse

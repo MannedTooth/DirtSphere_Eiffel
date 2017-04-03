@@ -44,10 +44,19 @@ feature -- Fonctions
 
 	create_block_at(a_x, a_y : INTEGER)
 			-- Crée un bloc à une coordonnée donnée
+			-- `a_block_type` : type du bloc à ajouter
 			-- `a_x` : Coordonée X à laquelle créer un bloc
 			-- `a_y` : Coordonée Y à laquelle créer un bloc
 		do
-			blocks.at (a_x).at (a_y) := block_factory.sand_block
+--			inspect a_block_type
+--				when 1 then
+--					blocks.at (a_x).at (a_y) := block_factory.sand_block
+--				when 2 then
+--					blocks.at (a_x).at (a_y) := block_factory.water_block
+--				else
+
+--			end
+			blocks.at (a_x).at (a_y) := block_factory.water_block
 			blocks.at (a_x).at (a_y).set_x_screen((a_x - 1) * block_scale)
 			blocks.at (a_x).at (a_y).set_y_screen((a_y - 1) * block_scale)
 			blocks.at (a_x).at (a_y).set_x_table(a_x)
