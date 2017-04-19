@@ -13,7 +13,7 @@ inherit
 feature {NONE} -- Création
 
 	make(a_texture:GAME_TEXTURE; a_is_floating: BOOLEAN)
-			-- Création d'un bloc
+			-- Création de `Current`
 		do
 			texture := a_texture
 			is_floating := a_is_floating
@@ -24,70 +24,63 @@ feature {NONE} -- Création
 feature -- Fonctions
 
 	draw(a_renderer:GAME_RENDERER)
-			-- Demande au `a_renderer` de dessiner le bloc
-			-- `a_renderer` : Le `GAME_RENDERER` qui dessinera le bloc
+			-- Demande au `a_renderer` de dessiner `Current`
 		do
-			a_renderer.draw_texture (texture, get_x_screen, get_y_screen)
+			a_renderer.draw_texture (texture, x_screen, y_screen)
 		end
 
 	update(a_block_array : BLOCK_ARRAY)
-			-- Mets à jour le bloc dans une liste
-			-- `a_block_array` : la liste de blocs qui sera mise à jour
+			-- Mets à jour `Current` dans `a_block_array`
 		deferred
 		end
 
-feature -- Getters & Setters
-	get_was_updated:BOOLEAN
-			-- Retourne l'état de `was_updated`
-		do
-			Result := was_updated
-		end
+feature -- Attributs
+
+	texture:GAME_TEXTURE -- {GAME_TEXTURE} (couleur) de `Current`
+
+	was_updated:BOOLEAN -- Indique si `Current` a été mis à jour durant cette itération
+
+	block_type:INTEGER -- Le type de `Current` [TBA]
+
+	x_table:INTEGER -- La coordonnée X de `Current` dans le {BLOCK_ARRAY}
+
+	y_table:INTEGER -- La coordonnée Y de `Current` dans le {BLOCK_ARRAY}
+
+	is_floating:BOOLEAN -- Est-ce que `Current` peut flotter sur des {LIQUID}?
+
+feature -- Setters
 
 	set_was_updated(a_state:BOOLEAN)
-			-- Définit l'état de `was_updated`
-			-- `a_state` : le nouvel état de `was_updated`
+			-- Mets `was_updated` à `a_state`
 		do
 			was_updated := a_state
 		end
 
-	get_x_table:INTEGER
-			-- Retourne la coordonnée X du bloc dans la liste
-		do
-			Result := x_table
-		end
 
 	set_x_table(a_x:INTEGER)
-			-- Définit la coordonnée X du bloc dans la liste
-			-- `a_x` : la nouvelle valeur de `x_table`
+			-- Mets `x_table` à `a_x`
 		do
 			x_table := a_x
 		end
 
-	get_y_table:INTEGER
-			-- Retourne la coordonnée Y du bloc dans la liste
-		do
-			Result := y_table
-		end
 
 	set_y_table(a_y:INTEGER)
-			-- Définit la coordonnée Y du bloc dans la liste
-			-- `a_y` : la nouvelle valeur de `y_table`
+			-- Mets `y_table` à `y_x`
 		do
 			y_table := a_y
 		end
 
-feature {NONE} -- Attributs
-
-	texture:GAME_TEXTURE -- Texture (couleur) du bloc
-
-	was_updated:BOOLEAN -- Indique si le bloc a été mis à jour durant cette itération
-
-	block_type:INTEGER -- Le type du bloc [TBA]
-
-	x_table:INTEGER -- La coordonnée X du bloc dans la liste
-
-	y_table:INTEGER -- La coordonnée Y du bloc dans la liste
-
-	is_floating:BOOLEAN -- Est-ce que le bloc peut flotter sur des liquides?
+note
+	copyright: "Copyright (c) 2017, Olivier Letendre"
+	license: "[
+			 This program is free software: you can redistribute it and/or modify
+			 it under the terms of the GNU General Public License as published by
+			 the Free Software Foundation, either version 3 of the License, or
+			 (at your option) any later version.
+			 ]"
+	source: "[
+			Olivier Letendre
+			Email MannedTooth@outlook.com
+			]"
 
 end

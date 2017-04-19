@@ -21,40 +21,37 @@ feature -- Fonction
 	update(a_block_array : BLOCK_ARRAY)
 			-- <precursor>
 		do
---			if is_around(a_block_array, {WATER}) then
---				a_block_array.create_block_at (3, get_x_table, get_y_table)
---			end
-			if a_block_array.is_valid_position (get_x_table, get_y_table - 1) and attached {WATER} (a_block_array.block_at (get_x_table, get_y_table - 1)) then
-				a_block_array.create_block_at (3, get_x_table, get_y_table)
-			elseif a_block_array.is_valid_position (get_x_table - 1, get_y_table) and attached {WATER} (a_block_array.block_at (get_x_table - 1, get_y_table)) then
-				a_block_array.create_block_at (3, get_x_table, get_y_table)
-			elseif a_block_array.is_valid_position (get_x_table + 1, get_y_table) and attached {WATER} (a_block_array.block_at (get_x_table + 1, get_y_table)) then
-				a_block_array.create_block_at (3, get_x_table, get_y_table)
+			if a_block_array.is_valid_position (x_table, y_table - 1) and attached {WATER} (a_block_array.block_at (x_table, y_table - 1)) then
+				a_block_array.create_block_at (3, x_table, y_table)
+			elseif a_block_array.is_valid_position (x_table - 1, y_table) and attached {WATER} (a_block_array.block_at (x_table - 1, y_table)) then
+				a_block_array.create_block_at (3, x_table, y_table)
+			elseif a_block_array.is_valid_position (x_table + 1, y_table) and attached {WATER} (a_block_array.block_at (x_table + 1, y_table)) then
+				a_block_array.create_block_at (3, x_table, y_table)
 			end
 			gravity(a_block_array)
 			set_was_updated(true)
 		end
 
-	is_around(a_block_array : BLOCK_ARRAY;a_type:TYPE[BLOCK]):BOOLEAN
-		do
-			Result := False
-			if
-				a_block_array.is_valid_position (get_x_table, get_y_table - 1) and then
-				attached (a_block_array.block_at (get_x_table, get_y_table - 1)).generating_type as la_type and then
-				la_type >= a_type then
-				Result := True
-			elseif
-				a_block_array.is_valid_position (get_x_table - 1, get_y_table) and then
-				attached (a_block_array.block_at (get_x_table - 1, get_y_table)).generating_type as la_type and then
-				la_type >= a_type then
-				Result := True
-			elseif
-				a_block_array.is_valid_position (get_x_table + 1, get_y_table) and then
-				attached (a_block_array.block_at (get_x_table + 1, get_y_table)).generating_type as la_type and then
-				la_type >= a_type then
-				Result := True
-			end
-		end
+--	is_around(a_block_array : BLOCK_ARRAY;a_type:TYPE[BLOCK]):BOOLEAN
+--		do
+--			Result := False
+--			if
+--				a_block_array.is_valid_position (get_x_table, get_y_table - 1) and then
+--				attached (a_block_array.block_at (get_x_table, get_y_table - 1)).generating_type as la_type and then
+--				la_type >= a_type then
+--				Result := True
+--			elseif
+--				a_block_array.is_valid_position (get_x_table - 1, get_y_table) and then
+--				attached (a_block_array.block_at (get_x_table - 1, get_y_table)).generating_type as la_type and then
+--				la_type >= a_type then
+--				Result := True
+--			elseif
+--				a_block_array.is_valid_position (get_x_table + 1, get_y_table) and then
+--				attached (a_block_array.block_at (get_x_table + 1, get_y_table)).generating_type as la_type and then
+--				la_type >= a_type then
+--				Result := True
+--			end
+--		end
 
 
 note

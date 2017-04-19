@@ -18,7 +18,7 @@ create
 feature {NONE} -- Création
 
     make
-    		-- Lancement de l'application
+    		-- Lancement du jeu
         local
         	l_engine:ENGINE
         do

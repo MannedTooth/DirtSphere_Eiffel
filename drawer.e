@@ -13,8 +13,8 @@ create
 feature -- Création
 
 	make(a_renderer : GAME_RENDERER)
-			-- Création du dessinateur
-			-- `a_renderer` : le `GAME_RENDERER` qui dessinera les objets
+			-- Création de `Current`
+			-- `a_renderer` : le `GAME_RENDERER` qui dessinera les {DRAWABLE}
 		local
 			l_background_color:GAME_COLOR_READABLE
 		do
@@ -27,15 +27,13 @@ feature -- Création
 feature -- Fonctions
 
 	draw(a_drawable : DRAWABLE)
-			-- Déssine un objet
-			-- `a_drawable` : objet à dessiner
+			-- Déssine `a_drawable`
 		do
 			a_drawable.draw(renderer)
 		end
 
 	draw_drawables(a_drawables : LIST[DRAWABLE])
-			-- Boucle qui dessine tous les objets dessinables
-			-- `a_drawables` : liste d'objets à dessiner
+			-- Boucle qui dessine tous les {DRAWABLE} dans `a_drawables`
 		do
 			across a_drawables as la_drawables loop
 				draw(la_drawables.item)
@@ -51,10 +49,23 @@ feature -- Fonctions
 
 feature -- Attributs
 
-	renderer:GAME_RENDERER -- le `GAME_RENDERER` qui dessinera les objets
+	renderer:GAME_RENDERER -- Le `GAME_RENDERER` qui dessinera les {DRAWABLE}
 
-	background_color:GAME_COLOR_READABLE -- la couleur de fond
+	background_color:GAME_COLOR_READABLE -- La couleur de fond
 
+invariant
 
+note
+	copyright: "Copyright (c) 2017, Olivier Letendre"
+	license: "[
+			 This program is free software: you can redistribute it and/or modify
+			 it under the terms of the GNU General Public License as published by
+			 the Free Software Foundation, either version 3 of the License, or
+			 (at your option) any later version.
+			 ]"
+	source: "[
+			Olivier Letendre
+			Email MannedTooth@outlook.com
+			]"
 
 end

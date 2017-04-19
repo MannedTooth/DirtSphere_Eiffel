@@ -13,9 +13,8 @@ create
 feature -- Création
 
 	make(a_block_scale : INTEGER; a_renderer : GAME_RENDERER)
-			-- Crée le créateur de blocs
-			-- `a_block_scale` : la grosseur d'un bloc
-			-- `a_renderer` : le `GAME_RENDERER` qui créera les textures des blocs
+			-- Crée `Current` avec une grosseur de {BLOCK} de `a_block_scale`
+			-- `a_renderer` : le `GAME_RENDERER` qui créera les textures des {BLOCK}
 		do
 			texture_air := get_target (a_block_scale, a_renderer, create {GAME_COLOR}.make_rgb (0, 0, 0))
 			texture_sand := get_target (a_block_scale, a_renderer, create {GAME_COLOR}.make_rgb (237, 213, 118))
@@ -26,34 +25,32 @@ feature -- Création
 feature -- Fonctions
 
 	air_block:AIR
-			-- Crée un bloc d' `AIR`
+			-- Crée un {BLOCK} d'{AIR}
 		do
 			create Result.make(texture_air, false)
 		end
 
 	sand_block:SAND
-			-- Crée un bloc de `SAND`
+			-- Crée un {BLOCK} de {SAND}
 		do
 			create Result.make(texture_sand, false)
 		end
 
 	dirt_block:MUD
-			-- Crée un bloc de `MUD`
+			-- Crée un {BLOCK} de {MUD}
 		do
 			create Result.make(texture_dirt, false)
 		end
 
 	water_block:WATER
-			--Crée un bloc de `WATER`
+			--Crée un {BLOCK} de {WATER}
 		do
 			create Result.make(texture_water, false)
 		end
 
 	get_target(a_block_scale : INTEGER; a_renderer:GAME_RENDERER; a_color:GAME_COLOR):GAME_TEXTURE_TARGET
-			-- Crée et retourne une texture d'un bloc
-			-- `a_block_scale` : grosseur du bloc
+			-- Crée et retourne une texture de {BLOCK} d'une grosseur de `a_block_scale` et de couleur `a_color`
 			-- `a_renderer` : le ``GAME_RENDERER` qui dessinera la texture
-			-- `a_color` : la couleur du bloc
 		local
 			l_target:GAME_TEXTURE_TARGET
 			l_pixel_format:GAME_PIXEL_FORMAT
@@ -70,12 +67,27 @@ feature -- Fonctions
 
 feature {NONE} -- Attributs
 
-	texture_air:GAME_TEXTURE -- texture d'un bloc d' `AIR`
+	texture_air:GAME_TEXTURE -- Texture d'un {BLOCK} d'{AIR}
 
-	texture_sand:GAME_TEXTURE -- texture d'un bloc de `SAND`
+	texture_sand:GAME_TEXTURE -- Texture d'un {BLOCK} de {SAND}
 
-	texture_dirt:GAME_TEXTURE -- texture d'un bloc de `MUD`
+	texture_dirt:GAME_TEXTURE -- Texture d'un {BLOCK} de {MUD}
 
-	texture_water:GAME_TEXTURE -- texture d'un bloc de `WATER`
+	texture_water:GAME_TEXTURE -- Texture d'un {BLOCK} de {WATER}
+
+invariant
+
+note
+	copyright: "Copyright (c) 2017, Olivier Letendre"
+	license: "[
+			 This program is free software: you can redistribute it and/or modify
+			 it under the terms of the GNU General Public License as published by
+			 the Free Software Foundation, either version 3 of the License, or
+			 (at your option) any later version.
+			 ]"
+	source: "[
+			Olivier Letendre
+			Email MannedTooth@outlook.com
+			]"
 
 end

@@ -1,5 +1,5 @@
 note
-	description: "Gestionnaire des sons."
+	description: "Gestionnaire de sons."
 	author: "Olivier Letendre"
 	date: "29/03/2016"
 	revision: "0.1"
@@ -16,7 +16,7 @@ create
 feature -- Création
 
 	make
-			-- Création du gestionnaire de sons
+			-- Création de `Current`
 		local
 			l_environment:EXECUTION_ENVIRONMENT
 		do
@@ -29,8 +29,7 @@ feature -- Création
 feature -- Fonctions
 
 	play_sound(a_sound : STRING)
-			-- Joue un son
-			-- `a_sound` : son à jouer
+			-- Joue le son du fichier à l'adresse `a_sound`
 		local
 			l_sound:AUDIO_SOUND_WAV_FILE
 		do
@@ -43,7 +42,22 @@ feature -- Fonctions
 
 feature -- Attributs
 
-	source:AUDIO_SOURCE -- source du son
+	source:AUDIO_SOURCE -- Source du son
+
+invariant
+
+note
+	copyright: "Copyright (c) 2017, Olivier Letendre"
+	license: "[
+			 This program is free software: you can redistribute it and/or modify
+			 it under the terms of the GNU General Public License as published by
+			 the Free Software Foundation, either version 3 of the License, or
+			 (at your option) any later version.
+			 ]"
+	source: "[
+			Olivier Letendre
+			Email MannedTooth@outlook.com
+			]"
 
 
 end

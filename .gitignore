@@ -18,6 +18,8 @@ $RECYCLE.BIN/
 *.lnk
 
 /EIFGENs
+*.rc
+*.dll
 
 # =========================
 # Operating System Files

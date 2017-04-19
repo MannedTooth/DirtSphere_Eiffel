@@ -17,7 +17,7 @@ create
 feature --Création
 
 	make
-			--Création du moteur de jeu
+			--Création de `Current`
 		local
 			l_window_builder:GAME_WINDOW_RENDERED_BUILDER
 			l_controller:CONTROLLER
@@ -71,13 +71,14 @@ feature -- Fonctions
 			end
 			updater.update (block_array)
 			drawer.clear
-			across block_array.get_blocks as  la_array loop
+			across block_array.blocks as  la_array loop
 				drawer.draw_drawables (la_array.item)
 			end
 			window.update
 		end
 
 	on_key_pressed(a_timestamp: NATURAL_32; a_key_state: GAME_KEY_STATE)
+			-- Fonction qui se lance lorsque une touche est pressée
 		do
 			if not a_key_state.is_repeat then
 				if a_key_state.is_space then
@@ -89,6 +90,7 @@ feature -- Fonctions
 		end
 
 	on_key_released(a_timestamp: NATURAL_32; a_key_state: GAME_KEY_STATE)
+			-- Fonction qui se lance lorsque une touche est relachée
 		do
 			if not a_key_state.is_repeat then
 				if a_key_state.is_space then
@@ -100,37 +102,50 @@ feature -- Fonctions
 		end
 
 	on_quit(a_timestamp:NATURAL)
-			-- Fonction qui se lance lorsque le joueur ferme la fenêtre
+			-- Fonction qui se lance lorsque l'utilisateur ferme la fenêtre
 		do
 			game_library.stop
 		end
 
 feature -- Attributs
 
-	updater:UPDATER -- l'objet qui mets à jour les blocs
+	updater:UPDATER -- L'objet qui mets à jour les {BLOCK}
 
-	current_block:INTEGER -- le bloc utilisé en ce moment [TBA]
+	current_block:INTEGER -- Le {BLOCK} utilisé en ce moment [TBA]
 
-	block_scale:INTEGER -- La grosseur d'un bloc
+	block_scale:INTEGER -- La grosseur d'un {BLOCK}
 
-	resolution_height:INTEGER -- La hauteur de la fenêtre
+	resolution_height:INTEGER -- La résolution verticale de la fenêtre
 
-	resolution_length:INTEGER -- La largeur de la fenêtre
+	resolution_length:INTEGER -- La résolution horizontale de la fenêtre
 
 	has_error:BOOLEAN -- Si le jeu rencontre un erreur
 
-	window:GAME_WINDOW_RENDERED -- La fenetre du jeu
+	window:GAME_WINDOW_RENDERED -- La fenêtre du jeu
 
 	controller:CONTROLLER -- Le gestionnaire d'entrées
 
 	sound_manager:SOUND_MANAGER -- Le gestionnaire de sons
 
-	block_array:BLOCK_ARRAY -- La liste de blocs
+	block_array:BLOCK_ARRAY -- La liste de {BLOCK}
 
-	block_factory:BLOCK_FACTORY -- Le créateur de blocs
+	block_factory:BLOCK_FACTORY -- Le créateur de {BLOCK}
 
 	drawer:DRAWER -- Le dessinateur
 
+invariant
 
+note
+	copyright: "Copyright (c) 2017, Olivier Letendre"
+	license: "[
+			 This program is free software: you can redistribute it and/or modify
+			 it under the terms of the GNU General Public License as published by
+			 the Free Software Foundation, either version 3 of the License, or
+			 (at your option) any later version.
+			 ]"
+	source: "[
+			Olivier Letendre
+			Email MannedTooth@outlook.com
+			]"
 
 end

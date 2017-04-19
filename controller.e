@@ -13,7 +13,7 @@ create
 feature {NONE} -- Création
 
 	make
-			-- Création du gestionnaire des entrées
+			-- Création de `Current`
 		local
 			l_mouse_state:GAME_MOUSE_STATE
 		do
@@ -45,6 +45,19 @@ feature --Attributs
 
 	mouse_y:INTEGER -- Position Y de la souris dans l'écran
 
+invariant
 
+note
+	copyright: "Copyright (c) 2017, Olivier Letendre"
+	license: "[
+			 This program is free software: you can redistribute it and/or modify
+			 it under the terms of the GNU General Public License as published by
+			 the Free Software Foundation, either version 3 of the License, or
+			 (at your option) any later version.
+			 ]"
+	source: "[
+			Olivier Letendre
+			Email MannedTooth@outlook.com
+			]"
 
 end

@@ -1,5 +1,5 @@
 note
-	description: "Un type de bloc."
+	description: "Un {BLOCK} d'air."
 	author: "Olivier Letendre"
 	date: "29/03/2016"
 	revision: "0.1"

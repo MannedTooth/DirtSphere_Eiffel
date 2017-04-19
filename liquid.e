@@ -13,19 +13,18 @@ inherit
 feature -- Fonctions
 
 	gravity(a_block_array : BLOCK_ARRAY)
-			-- Fait tomber le bloc avec de la physique d'un bloc liquide
-			-- `a_block_array` : la liste de bloc dans laquelle le bloc sera déplacé
+			-- Fait tomber le {BLOCK} avec de la physique d'un liquide dans la liste `a_block_array`
 		do
-			if a_block_array.is_valid_position (get_x_table, get_y_table + 1) and attached {AIR} (a_block_array.block_at (get_x_table, get_y_table + 1)) then
-				a_block_array.swap_block_with_down(get_x_table, get_y_table)
-			elseif a_block_array.is_valid_position (get_x_table - 1, get_y_table + 1) and attached {AIR} (a_block_array.block_at (get_x_table - 1, get_y_table + 1)) then
-				a_block_array.swap_block_with_down_left (get_x_table, get_y_table)
-			elseif a_block_array.is_valid_position (get_x_table + 1, get_y_table + 1) and attached {AIR} (a_block_array.block_at (get_x_table + 1, get_y_table + 1)) then
-				a_block_array.swap_block_with_down_right (get_x_table, get_y_table)
-			elseif a_block_array.is_valid_position (get_x_table - 1, get_y_table) and attached {AIR} (a_block_array.block_at (get_x_table - 1, get_y_table)) then
-				a_block_array.swap_block_with_left (get_x_table, get_y_table)
-			elseif a_block_array.is_valid_position (get_x_table + 1, get_y_table) and attached {AIR} (a_block_array.block_at (get_x_table + 1, get_y_table)) then
-				a_block_array.swap_block_with_right (get_x_table, get_y_table)
+			if a_block_array.is_valid_position (x_table, y_table + 1) and attached {AIR} (a_block_array.block_at (x_table, y_table + 1)) then
+				a_block_array.swap_block_with_down(x_table, y_table)
+			elseif a_block_array.is_valid_position (x_table - 1, y_table + 1) and attached {AIR} (a_block_array.block_at (x_table - 1, y_table + 1)) then
+				a_block_array.swap_block_with_down_left (x_table, y_table)
+			elseif a_block_array.is_valid_position (x_table + 1, y_table + 1) and attached {AIR} (a_block_array.block_at (x_table + 1, y_table + 1)) then
+				a_block_array.swap_block_with_down_right (x_table, y_table)
+			elseif a_block_array.is_valid_position (x_table - 1, y_table) and attached {AIR} (a_block_array.block_at (x_table - 1, y_table)) then
+				a_block_array.swap_block_with_left (x_table, y_table)
+			elseif a_block_array.is_valid_position (x_table + 1, y_table) and attached {AIR} (a_block_array.block_at (x_table + 1, y_table)) then
+				a_block_array.swap_block_with_right (x_table, y_table)
 			end
 		end
 
