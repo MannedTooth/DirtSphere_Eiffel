@@ -72,7 +72,6 @@ feature -- Fonctions
 			Result := blocks.at (a_x).at (a_y)
 		end
 
-
 	is_valid_position(a_x, a_y : INTEGER):BOOLEAN
 			-- Retourne si la position dans le tableau est valide (a l'intérieur de l'écran)
 			-- `a_x` : Coordonée X à vérifier

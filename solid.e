@@ -16,7 +16,7 @@ feature -- Fonctions
 			-- Fait tomber le bloc avec de la physique d'un bloc solide
 			-- `a_block_array` : la liste de bloc dans laquelle le bloc sera déplacé
 		do
-			if a_block_array.is_valid_position (get_x_table, get_y_table + 1) and attached {AIR} (a_block_array.block_at (get_x_table, get_y_table + 1)) then
+			if a_block_array.is_valid_position (get_x_table, get_y_table + 1) and (attached {AIR} (a_block_array.block_at (get_x_table, get_y_table + 1)) or (is_floating = false and attached {LIQUID} a_block_array.block_at (get_x_table, get_y_table + 1))) then
 				a_block_array.swap_block_with_down(get_x_table, get_y_table)
 			elseif a_block_array.is_valid_position (get_x_table - 1, get_y_table + 1) and attached {AIR} (a_block_array.block_at (get_x_table - 1, get_y_table + 1)) then
 				a_block_array.swap_block_with_down_left (get_x_table, get_y_table)

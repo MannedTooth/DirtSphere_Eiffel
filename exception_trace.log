@@ -304,3 +304,9 @@ GAME2_APPLICATION   make @1
 GAME2_APPLICATION   root's creation                                     
 <00000000042F75A8>                         Routine failure.              Exit
 -------------------------------------------------------------------------------
+Catcall detected in {TYPE}.is_conforming_to for arg#1: expected TYPE [AIR] but got TYPE [!WATER]
+Catcall detected in {TYPE}.is_conforming_to for arg#1: expected TYPE [AIR] but got TYPE [!WATER]
+Catcall detected in {TYPE}.is_conforming_to for arg#1: expected TYPE [AIR] but got TYPE [!WATER]
+Catcall detected in {TYPE}.is_strictly_conforming_to for arg#1: expected TYPE [!WATER] but got TYPE [AIR]
+Catcall detected in {TYPE}.is_conforming_to for arg#1: expected TYPE [!WATER] but got TYPE [AIR]
+Catcall detected in {TYPE}.is_strictly_conforming_to for arg#1: expected TYPE [!WATER] but got TYPE [AIR]

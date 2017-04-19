@@ -1,11 +1,11 @@
 note
-	description: "Un bloc de terre."
+	description: "Un bloc de boue."
 	author: "Olivier Letendre"
 	date: "29/03/2016"
 	revision: "0.1"
 
 class
-	DIRT
+	MUD
 
 inherit
 	SOLID

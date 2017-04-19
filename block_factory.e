@@ -37,8 +37,8 @@ feature -- Fonctions
 			create Result.make(texture_sand, false)
 		end
 
-	dirt_block:DIRT
-			-- Crée un bloc de `DIRT`
+	dirt_block:MUD
+			-- Crée un bloc de `MUD`
 		do
 			create Result.make(texture_dirt, false)
 		end
@@ -74,7 +74,7 @@ feature {NONE} -- Attributs
 
 	texture_sand:GAME_TEXTURE -- texture d'un bloc de `SAND`
 
-	texture_dirt:GAME_TEXTURE -- texture d'un bloc de `DIRT`
+	texture_dirt:GAME_TEXTURE -- texture d'un bloc de `MUD`
 
 	texture_water:GAME_TEXTURE -- texture d'un bloc de `WATER`
 

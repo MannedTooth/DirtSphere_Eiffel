@@ -24,7 +24,7 @@ feature --Création
 		do
 			resolution_height := 600
 			resolution_length := 600
-			block_scale := 20
+			block_scale := 15
 			current_block := 1
 			game_library.enable_video
 			has_error := False
