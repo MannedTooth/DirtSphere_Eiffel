@@ -17,8 +17,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#Eiffel generated files
 /EIFGENs
 *.rc
+
+#Librairies
 *.dll
 
 # =========================
