@@ -7,36 +7,59 @@ note
 class
 	UPDATER
 
+inherit
+	THREAD
+		rename
+			make as make_thread
+		end
+
 create
 	make
 
-feature -- Création
+feature {NONE} -- Création
 
-	make
+	make(a_block_array:BLOCK_ARRAY)
 			-- Création de `Current`
 		do
+			make_thread
+			game_ending := false
+			block_array := a_block_array
 		end
 
-feature -- Création
 
-	update(a_block_array : BLOCK_ARRAY)
-			-- Mets à jour les {BLOCK} dans `a_block_array`
+feature {NONE} -- Fonctions
+
+	execute
+			-- L'exécution du {THREAD}
 		do
-			across a_block_array.blocks as la_array loop
-				across la_array.item as la_block loop
-					if (la_block.item.was_updated = false)
-					then
-						la_block.item.update(a_block_array)
-					end
+			from
+			until
+				game_ending
+			loop
+				across block_array.blocks as la_array loop
+					across la_array.item as la_block loop
+						if (la_block.item.was_updated = false)
+						then
+							la_block.item.update(block_array)
+						end
 
+					end
 				end
-			end
-			across a_block_array.blocks as la_array loop
-				across la_array.item as la_block loop
-					la_block.item.set_was_updated(false)
+				across block_array.blocks as la_array loop
+					across la_array.item as la_block loop
+						la_block.item.set_was_updated(false)
+					end
 				end
 			end
 		end
+
+feature -- Attributs
+
+	game_ending: BOOLEAN -- Le jeu se termine
+
+	block_array: BLOCK_ARRAY -- La liste de {BLOCK}
+
+invariant
 
 note
 	copyright: "Copyright (c) 2017, Olivier Letendre"

@@ -32,7 +32,7 @@ feature --Création
 			l_window_builder.set_dimension (resolution_height, resolution_length)
 			window := l_window_builder.generate_window
 
-			create updater.make
+
 
 
 			create l_controller.make
@@ -43,6 +43,9 @@ feature --Création
 
 			create block_array.make(resolution_height // block_scale, resolution_length // block_scale, block_scale, block_factory)
 			create drawer.make(window.renderer)
+
+			create updater.make(block_array)
+			updater.launch
 		end
 
 feature -- Fonctions
@@ -69,7 +72,6 @@ feature -- Fonctions
 					block_array.create_block_at (current_block, (controller.mouse_x // block_scale) + 1, (controller.mouse_y // block_scale) + 1)
 				end
 			end
-			updater.update (block_array)
 			drawer.clear
 			across block_array.blocks as  la_array loop
 				drawer.draw_drawables (la_array.item)
