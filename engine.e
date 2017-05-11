@@ -85,7 +85,8 @@ feature -- Fonctions
 			if not a_key_state.is_repeat then
 				if a_key_state.is_space then
 					current_block := 2
-
+				elseif a_key_state.is_s then
+					connection_au_serveur
 				end
 
 			end
@@ -97,7 +98,6 @@ feature -- Fonctions
 			if not a_key_state.is_repeat then
 				if a_key_state.is_space then
 					current_block := 1
-
 				end
 
 			end
@@ -107,6 +107,56 @@ feature -- Fonctions
 			-- Fonction qui se lance lorsque l'utilisateur ferme la fenêtre
 		do
 			game_library.stop
+		end
+
+	connection_au_serveur
+		local
+			l_addr_factory:INET_ADDRESS_FACTORY
+			l_socket:NETWORK_STREAM_SOCKET
+		do
+			create l_addr_factory
+			if attached l_addr_factory.create_from_name ("localhost") as la_address then
+				create l_socket.make_client_by_address_and_port (la_address, 12345)
+				if not l_socket.invalid_address then
+					l_socket.connect
+					if l_socket.is_connected then
+						print("je suis connecte au serveur")
+--						sauvegarder_blocs(l_socket, block_array)
+					else
+						io.error.put_string ("Erreur lors de la connexion au serveur.%N")
+					end
+				else
+					io.error.put_string ("Erreur: Adresse invalide: " + io.last_string + ".%N")
+
+				end
+				l_socket.close
+			end
+		end
+
+	sauvegarder_blocs(a_socket:NETWORK_STREAM_SOCKET; a_block_array:BLOCK_ARRAY)
+		local
+			l_list_blocks_transfert:LIST[LIST[INTEGER]]
+			l_list_transfert:LIST[INTEGER]
+		do
+--			create {ARRAYED_LIST[LIST[INTEGER]]} l_list_blocks_transfert.make(a_block_array.blocks.count)
+--			across 1 |..| a_block_array.blocks.count as la_rangee loop
+--				create {ARRAYED_LIST[INTEGER]}l_list_transfert.make (a_block_array.blocks.count.item)
+--				across 1 |..| l_list_transfert.count as la_colonne loop
+--					if attached {AIR} a_block_array.block_at (la_rangee.item, la_colonne.item) then
+--						l_list_blocks_transfert.at (la_rangee.item).at (la_colonne.item) := 0
+--					elseif attached {WATER} a_block_array.block_at (la_rangee.item, la_colonne.item) then
+--						l_list_blocks_transfert.at (la_rangee.item).at (la_colonne.item) := 1
+--					elseif attached {SAND} a_block_array.block_at (la_rangee.item, la_colonne.item) then
+--						l_list_blocks_transfert.at (la_rangee.item).at (la_colonne.item) := 2
+--					elseif attached {MUD} a_block_array.block_at (la_rangee.item, la_colonne.item) then
+--						l_list_blocks_transfert.at (la_rangee.item).at (la_colonne.item) := 3
+--					end
+--				end
+--			end
+
+
+--			a_socket.independent_store (block_scale)
+
 		end
 
 feature -- Attributs
