@@ -113,9 +113,9 @@ void egc_init_plug (void)
 	egc_forg_table = egc_forg_table_init;
 
 	egc_system_name = "dirtsphere_eiffel_server";
-	egc_system_location = "C:\\Users\\MannedTooth\\Documents\\Programmation Projects\\Eiffel\\DirtSphere_Eiffel_Server\\EIFGENs\\dirtsphere_eiffel_server\\W_code";
+	egc_system_location = "C:\\Users\\Manned Tooth\\Desktop\\DirtSphere_Eiffel_Server\\EIFGENs\\dirtsphere_eiffel_server\\W_code";
 	egc_compiler_tag = 38;
-	egc_project_version = 1494455892;
+	egc_project_version = 1495678533;
 	egc_has_old_special_semantic = 0;
 	egc_has_ieee_semantic = 1;
 	scount = 978;
@@ -128,7 +128,7 @@ void egc_init_plug (void)
 	egc_rcarg = (int32 *) eif_malloc (sizeof(int32)*egc_rcount);
 	egc_rlist[0] = "APPLICATION.make";
 	egc_rcdt[0] = 0;
-	egc_rcrid[0] = 5301;
+	egc_rcrid[0] = 5135;
 	egc_rcarg[0] = 0;
 	
 	

@@ -5482,18 +5482,18 @@ char *names965 [] =
 char *names966 [] =
 {
 "internal_host_name",
-"family",
-"the_address",
-};
-
-char *names967 [] =
-{
-"internal_host_name",
 "the_address",
 "the_scope_ifname",
 "is_scope_id_set",
 "family",
 "the_scope_id",
+};
+
+char *names967 [] =
+{
+"internal_host_name",
+"family",
+"the_address",
 };
 
 char *names970 [] =

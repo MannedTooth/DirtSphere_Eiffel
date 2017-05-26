@@ -220,7 +220,7 @@ void Init970(void)
 	IDSC(desc_970 + 1, 1, 969);
 	IDSC(desc_970 + 32, 368, 969);
 	IDSC(desc_970 + 35, 369, 969);
-	IDSC(desc_970 + 129, 358, 969);
+	IDSC(desc_970 + 129, 357, 969);
 	IDSC(desc_970 + 150, 374, 969);
 	IDSC(desc_970 + 161, 370, 969);
 }

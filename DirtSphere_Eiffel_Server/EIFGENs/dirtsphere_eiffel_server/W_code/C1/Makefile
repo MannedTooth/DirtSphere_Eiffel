@@ -28,7 +28,7 @@ COMMAND_MAKEFILE =
 START_TEST = if [ ! -f finished ] ; then 
 END_TEST = ; fi 
 CREATE_TEST = "C:\Program Files\Eiffel Software\EiffelStudio 17.01 GPL/gcc/win64/msys/1.0/bin/touch" finished
-PATH := C:\Program Files\Eiffel Software\EiffelStudio 17.01 GPL/gcc/win64/mingw/libexec/gcc/mingw32/3.4.2;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\Program Files\TortoiseSVN\bin;C:\Users\MannedTooth\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\MannedTooth\AppData\Local\Programs\Python\Python36-32\;C:\Users\MannedTooth\AppData\Local\Programs\Python\Launcher\ 
+PATH := C:\Program Files\Eiffel Software\EiffelStudio 17.01 GPL/gcc/win64/mingw/libexec/gcc/mingw32/3.4.2;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Manned Tooth\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Users\Manned Tooth\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Manned Tooth\AppData\Local\Programs\Python\Python36-32\;C:\Users\Manned Tooth\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Users\Manned Tooth\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Manned Tooth\AppData\Local\Programs\Python\Python36-32\;C:\Users\Manned Tooth\AppData\Local\Microsoft\WindowsApps; 
 SYSTEM_IN_DYNAMIC_LIB = dirtsphere_eiffel_server.dll 
 
 .SUFFIXES:.cpp .o 
@@ -41,10 +41,10 @@ SYSTEM_IN_DYNAMIC_LIB = dirtsphere_eiffel_server.dll
 
 OBJECTS = big_file_C1_c.o 
 
-OLDOBJECTS =  ap971.o ap971d.o ne978.o ne978d.o in965.o in965d.o in969.o in969d.o \
-	ne977.o ne977d.o st976.o st976d.o in967.o in967d.o ad960.o ad960d.o \
-	in962.o in962d.o in964.o in964d.o in963.o in963d.o ad973.o ad973d.o \
-	in966.o in966d.o in961.o in961d.o so968.o so968d.o ne970.o ne970d.o \
+OLDOBJECTS =  ap971.o ap971d.o ne978.o ne978d.o in969.o in969d.o in965.o in965d.o \
+	ne977.o ne977d.o st976.o st976d.o in967.o in967d.o in966.o in966d.o \
+	ad960.o ad960d.o in962.o in962d.o in964.o in964d.o in963.o in963d.o \
+	ad973.o ad973d.o in961.o in961d.o so968.o so968d.o ne970.o ne970d.o \
 	so975.o so975d.o ad974.o ad974d.o ex972.o ex972d.o so959.o so959d.o \
 	pa958.o pa958d.o 
 

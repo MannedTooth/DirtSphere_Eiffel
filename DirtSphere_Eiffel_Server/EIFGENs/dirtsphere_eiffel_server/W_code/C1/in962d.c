@@ -68,7 +68,7 @@ void Init962(void)
 {
 	IDSC(desc_962, 0, 961);
 	IDSC(desc_962 + 1, 1, 961);
-	IDSC(desc_962 + 32, 363, 961);
+	IDSC(desc_962 + 32, 364, 961);
 }
 
 

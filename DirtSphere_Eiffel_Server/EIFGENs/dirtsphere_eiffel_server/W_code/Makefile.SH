@@ -106,7 +106,7 @@ E1/eparents.o: Makefile E1/Makefile E1/estructure.h
 
 OBJECTS= C1/Cobj1.o  E1/eoption.o E1/epattern.o E1/efrozen.o E1/ecall.o E1/eplug.o E1/eskelet.o E1/enames.o E1/evisib.o E1/ececil.o E1/einit.o E1/eparents.o
 
-PRECOMP_OBJECTS= "c:\users\mannedtooth\documents\eiffel user files\17.01\precomp\spec\win64\EIFGENs\base-scoop-safe\W_code\precomp.lib"
+PRECOMP_OBJECTS= "c:\users\manned tooth\documents\eiffel user files\17.01\precomp\spec\win64\EIFGENs\base-scoop-safe\W_code\precomp.lib"
 
 
 dirtsphere_eiffel_server: $(OBJECTS)  E1/emain.o Makefile

@@ -10,8 +10,8 @@
 extern "C" {
 #endif
 
-extern void F971_7561(EIF_REFERENCE);
-extern EIF_TYPED_VALUE F971_7562(EIF_REFERENCE);
+extern void F971_7301(EIF_REFERENCE);
+extern EIF_TYPED_VALUE F971_7302(EIF_REFERENCE);
 extern void EIF_Minit971(void);
 
 #ifdef __cplusplus
@@ -34,13 +34,15 @@ extern "C" {
 #endif
 
 /* {APPLICATION}.make */
-void F971_7561 (EIF_REFERENCE Current)
+void F971_7301 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "make";
 	RTEX;
 	EIF_REFERENCE loc1 = (EIF_REFERENCE) 0;
 	EIF_REFERENCE loc2 = (EIF_REFERENCE) 0;
+	EIF_REFERENCE loc3 = (EIF_REFERENCE) 0;
+	EIF_REFERENCE loc4 = (EIF_REFERENCE) 0;
 	EIF_TYPED_VALUE up1x = {{0}, SK_POINTER};
 #define up1 up1x.it_p
 	EIF_TYPED_VALUE up2x = {{0}, SK_POINTER};
@@ -62,15 +64,17 @@ void F971_7561 (EIF_REFERENCE Current)
 	RTLR(1,tr1);
 	RTLR(2,ur1);
 	RTLR(3,Current);
-	RTLR(4,loc2);
+	RTLR(4,loc4);
 	RTLR(5,tr2);
 	RTLIU(6);
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
 	RTLU(SK_REF, &loc1);
 	RTLU(SK_REF, &loc2);
+	RTLU(SK_REF, &loc3);
+	RTLU(SK_REF, &loc4);
 	
-	RTEAA(l_feature_name, 970, Current, 2, 0, 13476);
+	RTEAA(l_feature_name, 970, Current, 4, 0, 13476);
 	RTSA(dtype);
 	RTSC;
 	RTME(dtype, 0);
@@ -80,7 +84,7 @@ void F971_7561 (EIF_REFERENCE Current)
 	RTHOOK(1);
 	RTDBGAL(Current, 1, 0xF80003D1, 0, 0); /* loc1 */
 	tr1 = RTLN(eif_new_type(977, 0x01).id);
-	ui4_1 = ((EIF_INTEGER_32) 15243L);
+	ui4_1 = ((EIF_INTEGER_32) 12345L);
 	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWC(5264, Dtype(tr1)))(tr1, ui4_1x);
 	RTNHOOK(1,1);
 	loc1 = (EIF_REFERENCE) RTCCL(tr1);
@@ -88,7 +92,7 @@ void F971_7561 (EIF_REFERENCE Current)
 	tb1 = *(EIF_BOOLEAN *)(loc1 + RTVA(5228, "is_bound", loc1));
 	if (tb1) {
 		RTHOOK(3);
-		tr1 = RTMS_EX_H("Socket ouvert sur le port 15243\012",32,564772362);
+		tr1 = RTMS_EX_H("Socket ouvert sur le port 12345\012",32,581527050);
 		ur1 = tr1;
 		(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(30, dtype))(Current, ur1x);
 		RTHOOK(4);
@@ -98,39 +102,43 @@ void F971_7561 (EIF_REFERENCE Current)
 		(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(5225, "accept", loc1))(loc1);
 		RTHOOK(6);
 		tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5224, "accepted", loc1))(loc1)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
-		loc2 = RTCCL(tr1);
-		if (EIF_TEST(loc2)) {
+		loc4 = RTCCL(tr1);
+		if (EIF_TEST(loc4)) {
 			RTHOOK(7);
-			(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(3306, "close", loc2))(loc2);
-		} else {
+			tr1 = RTMS_EX_H("le client s\'est connecte a moi",30,1327633769);
+			ur1 = tr1;
+			(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(30, dtype))(Current, ur1x);
 			RTHOOK(8);
+			(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(3306, "close", loc4))(loc4);
+		} else {
+			RTHOOK(9);
 			tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(27, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
-			RTNHOOK(8,1);
+			RTNHOOK(9,1);
 			tr2 = ((up2x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(122, "error", tr1))(tr1)), (((up2x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up2x.it_r = RTBU(up2x))), (up2x.type = SK_POINTER), up2x.it_r);
-			RTNHOOK(8,2);
+			RTNHOOK(9,2);
 			tr1 = RTMS_EX_H("Erreur: Le client n\'est pas valide.\012",36,1374870282);
 			ur1 = tr1;
 			(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3309, "put_string", tr2))(tr2, ur1x);
 		}
-		RTHOOK(9);
+		RTHOOK(10);
 		(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(3306, "close", loc1))(loc1);
 	} else {
-		RTHOOK(10);
+		RTHOOK(11);
 		tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(27, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
-		RTNHOOK(10,1);
+		RTNHOOK(11,1);
 		tr2 = ((up2x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(122, "error", tr1))(tr1)), (((up2x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up2x.it_r = RTBU(up2x))), (up2x.type = SK_POINTER), up2x.it_r);
-		RTNHOOK(10,2);
+		RTNHOOK(11,2);
 		tr1 = RTMS_EX_H("Erreur: Ne peut pas ouvrir le port.\012",36,1337576970);
 		ur1 = tr1;
 		(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3309, "put_string", tr2))(tr2, ur1x);
 	}
 	RTVI(Current, RTAL);
 	RTRS;
-	RTHOOK(11);
+	RTHOOK(12);
 	RTDBGLE;
 	RTMD(0);
 	RTLE;
-	RTLO(4);
+	RTLO(6);
 	RTEE;
 #undef up1
 #undef up2
@@ -139,11 +147,11 @@ void F971_7561 (EIF_REFERENCE Current)
 }
 
 /* {APPLICATION}.en_marche */
-EIF_TYPED_VALUE F971_7562 (EIF_REFERENCE Current)
+EIF_TYPED_VALUE F971_7302 (EIF_REFERENCE Current)
 {
 	EIF_TYPED_VALUE r;
 	r.type = SK_BOOL;
-	r.it_b = *(EIF_BOOLEAN *)(Current + RTWA(5302,Dtype(Current)));
+	r.it_b = *(EIF_BOOLEAN *)(Current + RTWA(5136,Dtype(Current)));
 	return r;
 }
 

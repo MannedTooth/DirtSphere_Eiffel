@@ -1991,7 +1991,7 @@ extern void egc_einit_init(void);
 void egc_einit_init (void)
 {
 	ccount = 375;
-	eif_nb_org_routines = 7562;
+	eif_nb_org_routines = 7556;
 	eif_nb_features = 13718;
 }
 

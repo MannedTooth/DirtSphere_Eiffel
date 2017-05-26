@@ -46,7 +46,7 @@ feature -- Attributs
 
 	y_table:INTEGER -- La coordonnée Y de `Current` dans le {BLOCK_ARRAY}
 
-	is_floating:BOOLEAN -- Est-ce que `Current` peut flotter sur des {LIQUID}?
+	is_floating:BOOLEAN -- Si `Current` peut flotter sur des {LIQUID}
 
 feature -- Setters
 

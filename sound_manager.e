@@ -17,11 +17,9 @@ feature -- Création
 
 	make
 			-- Création de `Current`
-		local
-			l_environment:EXECUTION_ENVIRONMENT
 		do
 			audio_library.enable_sound
-			create l_environment
+			create environment
 			audio_library.sources_add
 			source := audio_library.last_source_added
 		end
@@ -37,12 +35,33 @@ feature -- Fonctions
 			l_sound.open
 			source.queue_sound_loop (l_sound,1)
 			source.play
-
+--			from
+--				source.play
+--			until
+--				not source.is_playing
+--			loop
+--				environment.sleep (10000000)
+--				audio
+--			end
 		end
+
+	creation_block(block_created:INTEGER)
+			-- Détermine le son à jouer
+		do
+			inspect block_created
+				when 1 then
+					play_sound("sand.wav")
+				when 2 then
+					play_sound("water.wav")
+			end
+		end
+
 
 feature -- Attributs
 
 	source:AUDIO_SOURCE -- Source du son
+
+	environment:EXECUTION_ENVIRONMENT
 
 invariant
 

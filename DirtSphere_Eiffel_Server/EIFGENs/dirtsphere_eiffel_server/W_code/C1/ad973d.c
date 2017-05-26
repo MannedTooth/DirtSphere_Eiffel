@@ -87,10 +87,10 @@ void Init973(void)
 {
 	IDSC(desc_973, 0, 972);
 	IDSC(desc_973 + 1, 1, 972);
-	IDSC(desc_973 + 32, 362, 972);
+	IDSC(desc_973 + 32, 363, 972);
 	IDSC(desc_973 + 42, 213, 972);
 	IDSC(desc_973 + 44, 373, 972);
-	IDSC(desc_973 + 47, 366, 972);
+	IDSC(desc_973 + 47, 367, 972);
 }
 
 

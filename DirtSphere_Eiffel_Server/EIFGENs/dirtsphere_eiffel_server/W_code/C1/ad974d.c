@@ -87,10 +87,10 @@ void Init974(void)
 {
 	IDSC(desc_974, 0, 973);
 	IDSC(desc_974 + 1, 1, 973);
-	IDSC(desc_974 + 32, 362, 973);
+	IDSC(desc_974 + 32, 363, 973);
 	IDSC(desc_974 + 42, 213, 973);
 	IDSC(desc_974 + 44, 373, 973);
-	IDSC(desc_974 + 47, 366, 973);
+	IDSC(desc_974 + 47, 367, 973);
 }
 
 
